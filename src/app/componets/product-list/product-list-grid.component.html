@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div *ngFor="let product of products" class="col-md-3">
+          <div class="product-box">
+            <a routerLink="/products/{{product.id}}">
+              <img src="{{product.imageUrl}}" class="img-responsive">
+            </a>
+            <a routerLink="/products/{{product.id}}">
+            <h1>{{product.name}}</h1>
+              </a>
+            <div class="price">{{product.unitPrice | currency:'USD'}}</div>
+
+            <button (click)="addToCart(product)" class="btn btn-warning btn-sm">Add to cart</button>
+            <button  routerLink="/products/{{product.id}}" class="btn btn-primary btn-sm">Details</button>
+          </div>
+        </div>
+
+        <div *ngIf="products?.length==0" role="alert" class="alert alert-warning col-md-12">
+          No Products found.
+        </div>
+      </div>
+
+
+      <mat-paginator [length]="theTotalElements"
+                     [pageSize]="thePageSize"
+                     [pageSizeOptions]="[ 10, 25, 50, 100]"
+                     [pageIndex]="thePageNumber"
+                     (page)="pageEvent=loadServerData($event)"
+                     aria-label="Select page">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>
