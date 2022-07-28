@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {NgxPaginationModule} from "ngx-pagination";
 import { CartStatusComponent } from './componets/cart-status/cart-status.component';
+import { CartDetailsComponent } from './componets/cart-details/cart-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CartStatusComponent } from './componets/cart-status/cart-status.compone
     ProductCategoryMenuComponent,
     SearchComponent,
     ProductDetailsComponent,
-    CartStatusComponent
+    CartStatusComponent,
+    CartDetailsComponent
   ],
     imports: [
         BrowserModule,
