@@ -15,14 +15,12 @@ export class CartService {
 
   addToCart(theCartItem:CartItem){
 
-    let alreadyExistsInCart:boolean=false;
-    let existingCartItem:CartItem=undefined;
+    let alreadyExistsInCart: boolean = false;
+    let existingCartItem: CartItem = undefined;
 
     if (this.cartItems.length>0){
 
-      existingCartItem=this.cartItems.find(cartItem => {
-        cartItem.id === theCartItem.id;
-      });
+      existingCartItem=this.cartItems.find(tempCartItem =>tempCartItem.id === theCartItem.id);
     }
     alreadyExistsInCart = (existingCartItem != undefined);
 
@@ -46,5 +44,23 @@ export class CartService {
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
 
+    console.log(this.cartItems)
+  }
+
+  decrementQuantity(cartItem: CartItem) {
+    cartItem.quantity--;
+    if (cartItem.quantity===0){
+      this.remove(cartItem);
+    }else{
+      this.computeCartTotals()
+    }
+  }
+
+  remove(cartItem: CartItem) {
+    const itemIndex = this.cartItems.findIndex(tempCartItem => tempCartItem.id === cartItem.id);
+    if (itemIndex>-1){
+      this.cartItems.splice(itemIndex,1);
+      this.computeCartTotals();
+    }
   }
 }
