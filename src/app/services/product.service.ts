@@ -10,6 +10,7 @@ import {AddProductModel} from "../common/AddProduct.model";
 })
 export class ProductService implements OnInit{
 
+
   private BASE_URL= "http://localhost:8080/api/products";
   private CATEGORY_URL= "http://localhost:8080/api/product-category";
 
@@ -30,7 +31,9 @@ export class ProductService implements OnInit{
   }
 
   addProduct(dto:any):Observable<any>{
-return this.httpClient.post<any>("http://localhost:8080/api/product/add",dto);
+return this.httpClient.post<any>("http://localhost:8080/api/product/add",dto, {
+  headers: this.requestHeader,
+});
   }
 
   searchProductPaginate(thePage:number,

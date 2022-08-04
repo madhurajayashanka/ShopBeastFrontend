@@ -41,8 +41,6 @@ import {UserAuthService} from "./services/user-auth.service";
     CartStatusComponent,
     CartDetailsComponent,
     ProductCreateComponent,
-    LoginComponent,
-    SignupComponent
   ],
     imports: [
         BrowserModule,

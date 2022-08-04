@@ -9,8 +9,7 @@ import {SignupComponent} from "./componets/auth-form/signup/signup.component";
 import {AuthGuard} from "./componets/auth-form/auth.guard";
 
 const routes: Routes = [
-  {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
+  {path:'auth',loadChildren:()=>import('./componets/auth-form/auth.module').then(m=>m.AuthModule)},
   {path:'cart-details',component:CartDetailsComponent},
   {path:'product-create',component:ProductCreateComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
   {path:'products/:id',component:ProductDetailsComponent},
@@ -25,6 +24,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[AuthGuard],
 })
 export class AppRoutingModule { }

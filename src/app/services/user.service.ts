@@ -17,6 +17,10 @@ export class UserService {
     return this.httpclient.post(this.PATH_OF_API + '/authenticate', loginData);
   }
 
+  public createNewUser(userData) {
+    return this.httpclient.post(this.PATH_OF_API + '/registerNewUser', userData);
+  }
+
   public forUser() {
     return this.httpclient.get(this.PATH_OF_API + '/forUser', {
       responseType: 'text',
