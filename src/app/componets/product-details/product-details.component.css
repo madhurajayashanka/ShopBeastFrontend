@@ -1,0 +1,11 @@
+.page-container{
+  background:#e5e5e5;
+  padding-left:200px
+}
+.container-fluid a{
+  color: black !important;
+  text-decoration: none
+}
+.container-fluid a:hover{
+  font-size: 110%;
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
 /*
  * ----------------------------
  * Common CSS
@@ -110,10 +112,7 @@ a,a:hover{
   padding-bottom:8vh
 }
 
-.page-container{
-  background:#e5e5e5;
-  padding-left:200px
-}
+
 
 .main-content{
   padding-top:116px;
@@ -134,7 +133,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  */
 
 .header-desktop{
-  background:#0da8e4;
+  background:#59CE8F;
   -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
   -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
   box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
@@ -319,12 +318,13 @@ input.au-input.au-input-xl{
   left:0;
   top:0;
   bottom:0;
-  background:#fff;
   overflow-y:auto
 }
 
 .menu-sidebar .logo{
-  background:#fff;
+  font-family: 'Merienda One', cursive;
+  background:#59CE8F;
+  font-size: 2.8em;
   height:75px;
   padding:0 35px;
   display:-webkit-box;
@@ -340,9 +340,18 @@ input.au-input.au-input-xl{
   -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
   -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
   box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
-  border-right:1px solid #e5e5e5;
   position:relative;
   z-index:3
+}
+.logo a{
+  text-decoration: none;
+}
+.logo a:hover{
+  font-weight: bolder;
+  font-size: 110%;
+}
+.menu-sidebar .logo .logo-2nd{
+color: orangered;
 }
 
 .menu-sidebar .navbar-list .navbar-sub-list{
@@ -362,13 +371,14 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar{
-  padding:35px;
+  padding:68px 35px;
   padding-bottom:0
 }
 
 .navbar-sidebar .navbar-list li a{
+  text-decoration: none;
   display:block;
-  color:#555;
+  color: white;
   font-size:16px;
   padding:5px 0
 }
@@ -378,7 +388,7 @@ input.au-input.au-input-xl{
 }
 
 .navbar-sidebar .navbar-list li a:hover{
-  color:#0da8e4
+  font-size: 130%;
 }
 
 /*
@@ -541,14 +551,19 @@ input.au-input.au-input-xl{
 }
 .price{
   margin:15px 0 0;
-  font-weight:800;
-  color:#0da8e4
+  font-size: 2.2em;
+  color: crimson;
+}
+.card-title{
+  font-size: 2em;
+  font-weight:bolder;
+  padding-bottom: 1em;
 }
 .product-box h1{
   font-size:18px;
   border-bottom:1px solid #ccc;
   padding-bottom:5px;
-  font-weight:600;
+  font-weight: bold;
   padding-top:12px;
   margin-bottom:7px
 }
@@ -717,7 +732,8 @@ table.table.table-bordered th{
 .price{
   margin:15px 0 0;
   font-weight:800;
-  color:#0da8e4
+
+  color: crimson;
 }
 .detail-section{
   margin-top:60px
@@ -755,8 +771,7 @@ a.primary-btn:hover{
 }
 
 .active-link {
-  font-weight: bold;
-  color: red;
+  background-color: #f5ba06 !important;
 }
 
 /*
@@ -872,6 +887,7 @@ footer ul li{
   .logo{
     text-align:center
   }
+
   .header-desktop{
     position:relative;
     top:0;

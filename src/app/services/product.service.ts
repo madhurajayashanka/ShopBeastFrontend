@@ -1,8 +1,9 @@
 import {Injectable, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Product} from "../common/product";
 import {ProductCategory} from "../common/product-category";
+import {AddProductModel} from "../common/AddProduct.model";
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,18 @@ export class ProductService implements OnInit{
 
   constructor(private httpClient:HttpClient) { }
 
+  requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
+
   getProductListPaginate(thePage:number,
                          thePageSize:number,
                          theCategoryId:number)
     :Observable<GetResponseProduct>{
     const searchUrl = `${this.BASE_URL}/search/findByCategoryId?id=${theCategoryId}&page=${thePage}&size=${thePageSize}`;
     return this.httpClient.get<GetResponseProduct>(searchUrl);
+  }
+
+  addProduct(dto:any):Observable<any>{
+return this.httpClient.post<any>("http://localhost:8080/api/product/add",dto);
   }
 
   searchProductPaginate(thePage:number,

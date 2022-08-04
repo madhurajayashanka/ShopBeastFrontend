@@ -1,16 +1,29 @@
-<div class="details-section">
-  <div class="container-fluid">
-    <img src="{{product?.imageUrl}}" class="detail-img">
-    <h3>{{product?.name}}</h3>
-    <div class="price">
-      {{product?.unitPrice | currency:'USD'}}
-    </div>
-    <button (click)="addToCart(product)" class="btn btn-warning btn-sm">Add to cart</button>
-    <hr>
-    <h4>Description</h4>
-    <p>{{product?.description}}</p>
+<div class="page-container">
+  <aside class="menu-sidebar mt-5 d-none d-lg-block">
+    <app-product-category-menu></app-product-category-menu>
+  </aside>
 
-    <a routerLink="/products" class="mt-5">Back to Product List</a>
 
+  <div class="main-content">
+    <div class="section-content section-content-p35">
+
+        <div class="details-section">
+          <div class="container-fluid">
+            <img src="{{product?.imageUrl}}" class="detail-img">
+            <h1 class="mt-2">{{product?.name}}</h1>
+            <div class="price">
+              {{product?.unitPrice | currency:'USD'}}
+            </div>
+            <button (click)="addToCart(product)" class="btn btn-warning btn-sm mt-4">Add to cart</button>
+            <hr>
+            <h2>Description</h2>
+            <p>{{product?.description}}</p>
+
+            <a class="back-button" routerLink="/products" class="mt-5"><i class="fa-solid fa-arrow-left"></i> &nbsp; Back to Product List</a>
+
+          </div>
+        </div>
+
+      </div>
   </div>
 </div>

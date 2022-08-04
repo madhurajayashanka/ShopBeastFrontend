@@ -1,7 +1,15 @@
 <div class="cart-area d-n">
-  <a routerLink="/cart-details">
-    <div class="total">{{totalPrice | currency:'USD'}} <span> {{totalQuantity}}</span></div>
-    <i class="fa fa-shopping-cart"
-       aria-hidden="true"></i>
+
+
+  <a class="m-lg-5" routerLink="/cart-details">
+    <button type="button" class="btn btn-info">{{totalPrice | currency:'USD'}}</button>
+    <mat-icon matBadge="{{totalQuantity}}" matBadgeColor="warn"><i class="fa fa-shopping-cart"
+                                                                   aria-hidden="true"></i></mat-icon>
   </a>
+
+  <button *ngIf="isLoggedIn() && (userRole ==='Admin')" routerLink="/product-create" class="btn btn-primary">New Product</button>
+  <button routerLink="/login" *ngIf="!isLoggedIn()" type="button" class="m-lg-5 btn btn-danger">Login</button>
+  <button routerLink="/signup" *ngIf="!isLoggedIn()" type="button" class=" btn btn-primary">Signup</button>
+  <button *ngIf="isLoggedIn()" type="button" class="m-lg-5 btn btn-danger" (click)="logout()" >Logout</button>
 </div>
+

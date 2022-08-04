@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {CartItem} from "../common/cart-item";
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
+export class CartService implements OnInit{
   cartItems: CartItem[]=[];
 
   totalPrice: Subject<number>=new Subject<number>();
@@ -13,7 +13,11 @@ export class CartService {
 
   constructor() { }
 
+  ngOnInit(): void {
+    }
+
   addToCart(theCartItem:CartItem){
+
 
     let alreadyExistsInCart: boolean = false;
     let existingCartItem: CartItem = undefined;
@@ -44,7 +48,6 @@ export class CartService {
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
 
-    console.log(this.cartItems)
   }
 
   decrementQuantity(cartItem: CartItem) {
@@ -63,4 +66,5 @@ export class CartService {
       this.computeCartTotals();
     }
   }
+
 }
