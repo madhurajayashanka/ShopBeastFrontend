@@ -3,16 +3,16 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {Product} from "../common/product";
 import {ProductCategory} from "../common/product-category";
-import {AddProductModel} from "../common/AddProduct.model";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService implements OnInit{
+PATH_OF_URL = environment.BASE_URL;
 
-
-  private BASE_URL= "http://localhost:8080/api/products";
-  private CATEGORY_URL= "http://localhost:8080/api/product-category";
+  private BASE_URL= this.PATH_OF_URL+"/api/products";
+  private CATEGORY_URL= this.PATH_OF_URL+"/api/product-category";
 
   public searchText=new BehaviorSubject<string>('all');
   currentSearchText = this.searchText.asObservable();
@@ -31,7 +31,7 @@ export class ProductService implements OnInit{
   }
 
   addProduct(dto:any):Observable<any>{
-return this.httpClient.post<any>("http://localhost:8080/api/product/add",dto, {
+return this.httpClient.post<any>(this.PATH_OF_URL+"/api/product/add",dto, {
   headers: this.requestHeader,
 });
   }
