@@ -1,6 +1,6 @@
 # Shop Beast (Frontend)
 
-
+![Shop Beast](https://github.com/madhurajayashanka/ShopBeastFrontend/blob/master/Shop_Beast_images/shopBeast.png?raw=true)
 
 - **Frontend** - https://github.com/madhurajayashanka/ShopBeastFrontend
 
