@@ -2,13 +2,13 @@
 
 
 
-- **[Frontend](https://github.com/madhurajayashanka/ShopBeastFrontend)** - https://github.com/madhurajayashanka/ShopBeastFrontend
+- **Frontend** - https://github.com/madhurajayashanka/ShopBeastFrontend
 
-- **[Backend](https://github.com/madhurajayashanka/ShopBeastBackend)** - https://github.com/madhurajayashanka/ShopBeastBackend
+- **Backend** - https://github.com/madhurajayashanka/ShopBeastBackend
 
-- **[MySql Script](https://github.com/madhurajayashanka/ShopBeastBackend/blob/master/src/main/java/com/madhura/ecommerce/sql_script/shop-beast.sql)** - https://github.com/madhurajayashanka/ShopBeastBackend/blob/master/src/main/java/com/madhura/ecommerce/sql_script/shop-beast.sql
+- **MySql Script** - https://github.com/madhurajayashanka/ShopBeastBackend/blob/master/src/main/java/com/madhura/ecommerce/sql_script/shop-beast.sql
 
-- **[Site Photos](https://github.com/madhurajayashanka/ShopBeastFrontend/tree/master/Shop_Beast_images)** - https://github.com/madhurajayashanka/ShopBeastFrontend/tree/master/Shop_Beast_images
+- **Site Photos** - https://github.com/madhurajayashanka/ShopBeastFrontend/tree/master/Shop_Beast_images
 
 1. Admin Authorization (can add new products) -
     - Username - **admin123**
@@ -19,7 +19,7 @@
     - Password  - **madhura@123**
 
 
-#Description
+# Description
 
 I have made a web app called "Shop Beast" as a Fullstack web application. 
 It is a web app for a shop called Shop Beast to show the products to sell. Anyone can go into the site and look at the products, get some details about them, add them to the card, and purchase the item. 
